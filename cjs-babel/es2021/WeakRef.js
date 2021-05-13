@@ -1,21 +1,20 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
 var Counter = /*#__PURE__*/function () {
   function Counter(element) {
-    _classCallCheck(this, Counter);
-
+    (0, _classCallCheck2["default"])(this, Counter);
     // Remember a weak reference to the DOM element
     this.ref = new WeakRef(element);
     this.start();
   }
 
-  _createClass(Counter, [{
+  (0, _createClass2["default"])(Counter, [{
     key: "start",
     value: function start() {
       var _this = this;
@@ -56,7 +55,6 @@ var Counter = /*#__PURE__*/function () {
       }
     }
   }]);
-
   return Counter;
 }();
 

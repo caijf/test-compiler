@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build:es-babel && npm run build:es-tsc && npm run build:cjs-babel && npm run build:cjs-tsc",
     "build:es-babel": "rm -rf es-babel && cross-env MODULE_TYPE=es babel src -d es-babel --extensions \".ts\"",
-    "build:es-tsc": "rm -rf es-tsc && tsc -t ES5 -m ESNext --outDir ./es-tsc",
+    "build:es-tsc": "rm -rf es-tsc && tsc -t ES5 -m ESNext --outDir ./es-tsc --downlevelIteration --importHelpers",
     "build:cjs-babel": "rm -rf cjs-babel && cross-env MODULE_TYPE=cjs babel src -d cjs-babel --extensions \".ts\"",
     "build:cjs-tsc": "rm -rf cjs-tsc && tsc -t ES5 -m commonjs --outDir ./cjs-tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,9 +33,11 @@
     "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@types/node": "^15.0.3",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "4"
+    "husky": "4",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
