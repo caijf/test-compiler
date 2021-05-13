@@ -1,5 +1,7 @@
 # test-compiler
 
+> 推荐使用 [typescript Playground](https://www.typescriptlang.org/zh/play)、[babel repl](https://babeljs.io/repl)
+
 测试 babel、tsc 将 es 新特性编译成 es5 和 cjs
 
 ## ES2016
