@@ -2,13 +2,13 @@
 
 测试 babel、tsc 将 es 新特性编译成 es5 和 cjs
 
-### ES2016
+## ES2016
 
 ### `Array.prototype.includes`
 
 ### Exponentiation operator
 
-### ES2017
+## ES2017
 
 ### `Object.values`/`Object.entries`
 
@@ -22,7 +22,7 @@
 
 ### Shared memory and atomics
 
-### ES2018
+## ES2018
 
 ### `s` (`dotAll`) flag for regular expressions
 
