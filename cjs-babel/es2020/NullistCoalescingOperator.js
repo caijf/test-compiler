@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _ref, _, _A, _B;
 
 var foo = (_ref = null) !== null && _ref !== void 0 ? _ref : 'default string';

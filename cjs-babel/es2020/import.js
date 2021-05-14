@@ -42,4 +42,4 @@ var timer = setInterval( /*#__PURE__*/(0, _asyncToGenerator2["default"])( /*#__P
       }
     }
   }, _callee);
-})), 1000); // 仅为了触发 tslib
+})), 1000);

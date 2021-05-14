@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _adventurer$dog, _adventurer$someNonEx, _customer$city;
 
 var adventurer = {

@@ -1,4 +1,3 @@
-"use strict";
 var Counter = /** @class */ (function () {
     function Counter(element) {
         // Remember a weak reference to the DOM element
@@ -42,3 +41,4 @@ setTimeout(function () {
     var _a;
     (_a = document.getElementById("counter")) === null || _a === void 0 ? void 0 : _a.remove();
 }, 5000);
+export {};

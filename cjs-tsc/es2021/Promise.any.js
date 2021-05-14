@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var pErr = new Promise(function (resolve, reject) {
     reject("总是失败");
 });
@@ -16,4 +17,3 @@ Promise.any([pErr, pSlow, pFast]).then(function (value) {
 Promise.any([pErr]).catch(function (err) {
     console.log(err);
 });
-// 期望输出: "AggregateError: No Promise in Promise.any was resolved"

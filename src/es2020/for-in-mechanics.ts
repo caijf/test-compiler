@@ -10,3 +10,5 @@ console.log(Reflect.ownKeys(object1));
 
 console.log(Reflect.ownKeys(array1));
 // expected output: Array ["length"]
+
+export { }

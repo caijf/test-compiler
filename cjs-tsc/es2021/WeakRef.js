@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Counter = /** @class */ (function () {
     function Counter(element) {
         // Remember a weak reference to the DOM element

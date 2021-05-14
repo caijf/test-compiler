@@ -21,16 +21,18 @@ var expected = 4n / 2n; // ↪ 2n
 var rounded = 5n / 2n; // ↪ 2n, not 2.5n
 // BigInt 和 Number 不是严格相等的，但是宽松相等的。
 
-0n === 0; // ↪ false
+console.log("0n === 0 ", 0n === 0); // ↪ false
 
-0n == 0; // ↪ true
+console.log("0n == 0 ", 0n == 0); // ↪ true
 
-1n < 2; // ↪ true
+console.log("1n < 2 ", 1n < 2); // ↪ true
 
-2n > 1; // ↪ true
+console.log("2n > 1 ", 2n > 1); // ↪ true
 
-2 > 2; // ↪ false
+console.log("2 > 2 ", 2 > 2); // ↪ false
 
-2n > 2; // ↪ false
+console.log("2n > 2 ", 2n > 2); // ↪ false
 
-2n >= 2; // ↪ true
+console.log("2n >= 2 ", 2n >= 2); // ↪ true
+
+export {};

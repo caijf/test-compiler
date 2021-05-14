@@ -26,25 +26,25 @@ const rounded = 5n / 2n;
 // ↪ 2n, not 2.5n
 
 // BigInt 和 Number 不是严格相等的，但是宽松相等的。
-0n === 0
+console.log("0n === 0 ", 0n === 0);
 // ↪ false
 
-0n == 0
+console.log("0n == 0 ", 0n == 0);
 // ↪ true
 
-1n < 2
+console.log("1n < 2 ", 1n < 2);
 // ↪ true
 
-2n > 1
+console.log("2n > 1 ", 2n > 1);
 // ↪ true
 
-2 > 2
+console.log("2 > 2 ", 2 > 2);
 // ↪ false
 
-2n > 2
+console.log("2n > 2 ", 2n > 2);
 // ↪ false
 
-2n >= 2
+console.log("2n >= 2 ", 2n >= 2);
 // ↪ true
 
-
+export { }

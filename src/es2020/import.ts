@@ -15,5 +15,4 @@ const timer = setInterval(async () => {
   }
 }, 1000);
 
-// 仅为了触发 tslib
 export { };

@@ -20,3 +20,5 @@ Promise.any([pErr]).catch((err) => {
   console.log(err);
 })
 // 期望输出: "AggregateError: No Promise in Promise.any was resolved"
+
+export { }

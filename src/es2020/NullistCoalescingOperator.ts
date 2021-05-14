@@ -32,3 +32,5 @@ console.log(B() ?? C());
 // 依次打印 "函数 B 被调用了"、"false"
 // B() 返回了 false（既不是 null 也不是 undefined）
 // 所以右侧表达式没有被执行
+
+export { }

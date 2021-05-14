@@ -1,11 +1,1 @@
-declare const foo = "default string";
-declare const baz = 0;
-declare const nullValue: null;
-declare const emptyText = "";
-declare const someNumber = 42;
-declare const valA = "valA \u7684\u9ED8\u8BA4\u503C";
-declare const valB = "";
-declare const valC = 42;
-declare function A(): undefined;
-declare function B(): boolean;
-declare function C(): string;
+export {};

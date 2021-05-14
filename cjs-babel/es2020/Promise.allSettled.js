@@ -1,5 +1,8 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var promise1 = Promise.resolve(3);
 var promise2 = new Promise(function (resolve, reject) {
   return setTimeout(reject, 100, 'foo');

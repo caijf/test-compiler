@@ -10,3 +10,5 @@ Promise.allSettled(promises).then(function (results) {
 }); // expected output:
 // "fulfilled"
 // "rejected"
+
+export {};

@@ -1,5 +1,6 @@
 "use strict";
 var _a, _b, _c;
+Object.defineProperty(exports, "__esModule", { value: true });
 var adventurer = {
     name: 'Alice',
     cat: {

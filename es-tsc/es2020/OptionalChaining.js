@@ -1,4 +1,3 @@
-"use strict";
 var _a, _b, _c;
 var adventurer = {
     name: 'Alice',
@@ -21,3 +20,4 @@ var customer = {
 };
 var customerCity = (_c = customer === null || customer === void 0 ? void 0 : customer.city) !== null && _c !== void 0 ? _c : "暗之城";
 console.log(customerCity); // “暗之城”
+export {};

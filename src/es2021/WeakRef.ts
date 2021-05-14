@@ -46,3 +46,5 @@ counter.start();
 setTimeout(() => {
   document.getElementById("counter")?.remove();
 }, 5000);
+
+export { }

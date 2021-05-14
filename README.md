@@ -42,21 +42,51 @@
 
 ## ES2019
 
-### Optional catch binding
+### [Optional catch binding](https://github.com/tc39/proposal-optional-catch-binding)
 
-### JSON superset
+可选的 Catch 绑定。
 
-### `Symbol.prototype.description`
+### [JSON superset](https://github.com/tc39/proposal-json-superset)
 
-### `Function.prototype.toString` revision
+行分隔符（U + 2028）和段分隔符（U + 2029）符号现在允许在字符串文字中，与 JSON 匹配。在 ES2019 之前，这些符号在字符串文字中被视为行终止符，它会产生错误 `SyntaxError: Invalid or unexpected token`
 
-### `Object.fromEntries`
+### [`Symbol.prototype.description`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
-### Well-formed `JSON.stringify`
+只读属性，它会返回 `Symbol` 对象的可选描述的字符串。
+
+### [`Function.prototype.toString`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/toString) revision
+
+返回当前函数源代码的字符串。
+
+修订版。包含函数内的空格和注释，但在 Arrow Functions 上不起作用。
+
+### [`Object.fromEntries`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+
+把键值对列表转换为一个对象。
+
+### [Well-formed `JSON.stringify`](https://github.com/tc39/proposal-well-formed-stringify)
+
+更加友好的 JSON.stringify （修复了对于一些超出范围的 unicode 展示错误的问题。）
 
 ### `String.prototype.{trimStart,trimEnd}`
 
+- [String.prototype.trimStart()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
+
+字符串的开头删除连续空白符，返回一个新字符串，并不会修改原字符串本身。
+
+- [String.prototype.trimEnd()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
+
+字符串的末端删除连续空白符，返回一个新字符串，并不会修改原字符串本身。
+
 ### `Array.prototype.{flat,flatMap}`
+
+- [Array.prototype.flat()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+
+按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+
+- [Array.prototype.flatMap()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+
+首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。
 
 ## ES2020
 

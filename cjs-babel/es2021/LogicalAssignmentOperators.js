@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _d$duration, _d$speed;
 
 // Logical OR assignment (||=)

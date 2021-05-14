@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 if (globalThis === self) {
   // worker.js
   console.log("globalThis === self");

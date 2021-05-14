@@ -1,5 +1,8 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var pErr = new Promise(function (resolve, reject) {
   reject("总是失败");
 });

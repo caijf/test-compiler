@@ -24,3 +24,5 @@ var customer = {
 };
 var customerCity = (_customer$city = customer === null || customer === void 0 ? void 0 : customer.city) !== null && _customer$city !== void 0 ? _customer$city : "暗之城";
 console.log(customerCity); // “暗之城”
+
+export {};

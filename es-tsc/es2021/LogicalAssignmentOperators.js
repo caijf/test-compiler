@@ -1,4 +1,3 @@
-"use strict";
 // Logical OR assignment (||=)
 // 等效于以下两种写法
 // a || (a = b); a 为 falsy 时执行右边
@@ -34,4 +33,4 @@ console.log(d.duration);
 // expected output: 50
 (_b = d.speed) !== null && _b !== void 0 ? _b : (d.speed = 25);
 console.log(d.speed);
-// expected output: 25
+export {};

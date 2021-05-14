@@ -1,4 +1,3 @@
-"use strict";
 if (globalThis === self) { // worker.js
     console.log("globalThis === self");
 }
@@ -12,3 +11,4 @@ if (typeof globalThis.setTimeout !== 'function') {
     //  此环境中没有 setTimeout 方法！
     console.log("has setTimeout method");
 }
+export {};

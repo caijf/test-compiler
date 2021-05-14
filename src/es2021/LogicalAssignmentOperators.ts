@@ -45,3 +45,5 @@ console.log(d.duration);
 d.speed ??= 25;
 console.log(d.speed);
 // expected output: 25
+
+export { }

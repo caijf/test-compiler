@@ -26,3 +26,5 @@ let customer: Record<string, any> = {
 };
 let customerCity = customer?.city ?? "暗之城";
 console.log(customerCity); // “暗之城”
+
+export { }

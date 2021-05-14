@@ -4,3 +4,5 @@ console.log(p.replaceAll('dog', 'monkey')); // expected output: "The quick brown
 
 var regex = /Dog/ig;
 console.log(p.replaceAll(regex, 'ferret')); // expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+
+export {};

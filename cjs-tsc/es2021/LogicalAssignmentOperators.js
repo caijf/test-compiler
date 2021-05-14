@@ -4,6 +4,7 @@
 // a || (a = b); a 为 falsy 时执行右边
 // if(!a) a = b;
 var _a, _b;
+Object.defineProperty(exports, "__esModule", { value: true });
 var a = { duration: 50, title: '' };
 a.duration || (a.duration = 10);
 console.log(a.duration);
@@ -34,4 +35,3 @@ console.log(d.duration);
 // expected output: 50
 (_b = d.speed) !== null && _b !== void 0 ? _b : (d.speed = 25);
 console.log(d.speed);
-// expected output: 25

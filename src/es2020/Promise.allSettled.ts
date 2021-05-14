@@ -8,3 +8,5 @@ Promise.allSettled(promises).
 // expected output:
 // "fulfilled"
 // "rejected"
+
+export { }

@@ -39,3 +39,5 @@ console.log(d.duration); // expected output: 50
 
 (_d$speed = d.speed) !== null && _d$speed !== void 0 ? _d$speed : d.speed = 25;
 console.log(d.speed); // expected output: 25
+
+export {};

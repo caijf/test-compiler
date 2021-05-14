@@ -62,3 +62,4 @@ setTimeout(function () {
 
   (_document$getElementB = document.getElementById("counter")) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.remove();
 }, 5000);
+export {};

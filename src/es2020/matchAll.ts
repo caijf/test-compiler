@@ -9,5 +9,4 @@ console.log(array[0]);
 console.log(array[1]);
 // expected output: Array ["test2", "e", "st2", "2"]
 
-// 仅为了触发 tslib
 export { }

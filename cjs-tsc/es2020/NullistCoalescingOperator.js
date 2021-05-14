@@ -1,5 +1,6 @@
 "use strict";
 var _a, _b;
+Object.defineProperty(exports, "__esModule", { value: true });
 var foo = null !== null && null !== void 0 ? null : 'default string';
 console.log(foo);
 // expected output: "default string"
@@ -22,6 +23,3 @@ console.log((_a = A()) !== null && _a !== void 0 ? _a : C());
 // 依次打印 "函数 A 被调用了"、"函数 C 被调用了"、"foo"
 // A() 返回了 undefined，所以操作符两边的表达式都被执行了
 console.log((_b = B()) !== null && _b !== void 0 ? _b : C());
-// 依次打印 "函数 B 被调用了"、"false"
-// B() 返回了 false（既不是 null 也不是 undefined）
-// 所以右侧表达式没有被执行

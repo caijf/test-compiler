@@ -24,6 +24,5 @@ var timer = setInterval( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerat
       }
     }
   }, _callee);
-})), 1000); // 仅为了触发 tslib
-
+})), 1000);
 export {};
