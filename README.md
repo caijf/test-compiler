@@ -26,19 +26,37 @@
 
 ## ES2018
 
-### `s` (`dotAll`) flag for regular expressions
+### [Lifting template literal restriction](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Template_literals#%E5%B8%A6%E6%A0%87%E7%AD%BE%E7%9A%84%E6%A8%A1%E7%89%88%E5%AD%97%E9%9D%A2%E9%87%8F%E5%8F%8A%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97)
 
-### RegExp named capture groups
+移除对 ECMAScript 在带标签的模版字符串中转义序列的语法限制。
 
-### Rest/Spread Properties
+### [`s` (`dotAll`) flag for regular expressions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll)
 
-### RegExp Lookbehind Assertions
+正则表达式中点 `.` 匹配除回车外的任何单字符，标记 `s` 改变这种行为，允许行终止符的出现。
 
-### RegExp Unicode Property Escapes
+### [RegExp named capture groups](https://github.com/tc39/proposal-regexp-named-groups)
 
-### `Promise.prototype.finally`
+正则表达式命名捕获组 (`?<name>`)。
 
-### Asynchronous Iteration
+### [Rest/Spread Properties](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84%E4%B8%AD%E7%9A%84_rest)
+
+对象解构提供了和数组一样的 Rest 参数（）和展开操作符
+
+### [RegExp Lookbehind Assertions](https://github.com/tc39/proposal-regexp-lookbehind)
+
+正则表达式反向断言 (`?<=` `?<!`)。
+
+### [RegExp Unicode Property Escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
+
+正则表达式 Unicode 转义。 Unicode 属性转义——形式为 `\p{...}` 和 `\P{...}` ，在正则表达式中使用标记 `u` (unicode) 设置，在 `\p` 块儿内，可以以键值对的方式设置需要匹配的属性而非具体内容。
+
+### [`Promise.prototype.finally`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally)
+
+返回一个 `Promise`。在 `promise` 结束时，无论结果是 `fulfilled` 或者是 `rejected`，都会执行指定的回调函数。
+
+### [Asynchronous Iteration](https://github.com/tc39/proposal-async-iteration)
+
+异步迭代器。`await` 可以和循环一起使用，以串行的方式运行异步操作。
 
 ## ES2019
 
