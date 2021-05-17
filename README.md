@@ -6,9 +6,15 @@
 
 ## ES2016
 
-### `Array.prototype.includes`
+### [`Array.prototype.includes`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
-### Exponentiation operator
+用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 `true`，否则返回 `false`。
+
+### [Exponentiation operator](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Exponentiation)
+
+求幂运算符（`**`）返回将第一个操作数加到第二个操作数的幂的结果。它等效于 `Math.pow`，不同之处在于它也接受 `BigInts` 作为操作数。
+
+求幂运算符是是右结合的: `a ** b ** c` 等于 `a ** (b ** c)`。
 
 ## ES2017
 

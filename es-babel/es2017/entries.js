@@ -20,15 +20,10 @@ var obj3 = {
   7: 'c'
 };
 console.log(Object.entries(obj3)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
-
-for (var _i = 0, _Object$entries = Object.entries(obj3); _i < _Object$entries.length; _i++) {
-  var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-      key = _Object$entries$_i[0],
-      value = _Object$entries$_i[1];
-
-  console.log([key, value]);
-} // getFoo is property which isn't enumerable
-
+// for (const [key, value] of Object.entries(obj3)) {
+//   console.log([key, value]);
+// }
+// getFoo is property which isn't enumerable
 
 var obj4 = Object.create({}, {
   getFoo: {
@@ -50,12 +45,12 @@ var obj5 = {
   c: 9
 };
 
-for (var _i2 = 0, _Object$entries2 = Object.entries(obj5); _i2 < _Object$entries2.length; _i2++) {
-  var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
-      _key = _Object$entries2$_i[0],
-      _value = _Object$entries2$_i[1];
+for (var _i = 0, _Object$entries = Object.entries(obj5); _i < _Object$entries.length; _i++) {
+  var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+      key = _Object$entries$_i[0],
+      value = _Object$entries$_i[1];
 
-  console.log("".concat(_key, " ").concat(_value)); // "a 5", "b 7", "c 9"
+  console.log("".concat(key, " ").concat(value)); // "a 5", "b 7", "c 9"
 } // Or, using array extras
 
 
