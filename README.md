@@ -12,17 +12,49 @@
 
 ## ES2017
 
-### `Object.values`/`Object.entries`
+### [`Object.values` / `Object.entries`](https://github.com/tc39/proposal-object-values-entries)
 
-### String padding
+- [Object.values()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 
-### `Object.getOwnPropertyDescriptors`
+返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用 `for...in` 循环的顺序相同 ( 区别在于 `for-in` 循环枚举原型链中的属性 )。
 
-### Trailing commas in function parameter lists and calls
+- [Object.entries()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 
-### Async functions
+返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 `for...in` 循环遍历该对象时返回的顺序一致（区别在于 `for-in` 循环还会枚举原型链中的属性）。
 
-### Shared memory and atomics
+### [String padding](https://github.com/tc39/proposal-string-pad-start-end)
+
+- [String.prototype.padStart()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+用另一个字符串填充当前字符串(如果需要的话，会重复多次)，以便产生的字符串达到给定的长度。从当前字符串的左侧开始填充。
+
+- [String.prototype.padEnd()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+
+用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。
+
+### [`Object.getOwnPropertyDescriptors`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
+
+用来获取一个对象的所有自身属性的描述符，如果没有任何自身属性，则返回空对象。
+
+### [Trailing commas in function parameter lists and calls](https://github.com/tc39/proposal-trailing-function-commas)
+
+函数参数列表和调用中的末尾逗号。
+
+### [Async functions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction)
+
+更清晰的 Promise 语法
+
+### [Shared memory and atomics](https://github.com/tc39/ecmascript_sharedmem)
+
+用于从共享内存位置读取和写入。
+
+- [SharedArrayBuffer](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+
+`SharedArrayBuffer` 对象用来表示一个通用的，固定长度的原始二进制数据缓冲区，类似于 `ArrayBuffer` 对象，它们都可以用来在共享内存（shared memory）上创建视图。与 `ArrayBuffer` 不同的是，`SharedArrayBuffer` 不能被分离。
+
+- [Atomics](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+
+`Atomics` 对象提供了一组静态方法对 `SharedArrayBuffer` 和 `ArrayBuffer` 对象进行原子操作。
 
 ## ES2018
 
@@ -86,7 +118,7 @@
 
 更加友好的 JSON.stringify （修复了对于一些超出范围的 unicode 展示错误的问题。）
 
-### `String.prototype.{trimStart,trimEnd}`
+### [`String.prototype.{trimStart,trimEnd}`](https://github.com/tc39/proposal-string-left-right-trim)
 
 - [String.prototype.trimStart()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
 
@@ -96,7 +128,7 @@
 
 字符串的末端删除连续空白符，返回一个新字符串，并不会修改原字符串本身。
 
-### `Array.prototype.{flat,flatMap}`
+### [`Array.prototype.{flat,flatMap}`](https://github.com/tc39/proposal-flatMap)
 
 - [Array.prototype.flat()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
 
@@ -158,7 +190,7 @@
 
 WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被弱引用对象被 GC(garbage collector)回收。**尽量不要使用。**
 
-### Logical Assignment Operators
+### [Logical Assignment Operators](https://github.com/tc39/proposal-logical-assignment)
 
 - [Logical AND assignment (&&=)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment)
 - [Logical OR assignment (||=)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment)
