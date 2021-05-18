@@ -31,7 +31,7 @@ function run() {
                     i = 0;
                     _a.label = 1;
                 case 1:
-                    if (!(i < 10)) return [3 /*break*/, 4];
+                    if (!(i < 2)) return [3 /*break*/, 4];
                     return [4 /*yield*/, asyncCall()];
                 case 2:
                     _a.sent();

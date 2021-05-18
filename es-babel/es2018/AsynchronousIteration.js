@@ -52,7 +52,7 @@ function _run() {
             i = 0;
 
           case 1:
-            if (!(i < 10)) {
+            if (!(i < 2)) {
               _context2.next = 8;
               break;
             }

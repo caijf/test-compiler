@@ -14,7 +14,7 @@ async function asyncCall() {
 }
 
 async function run() {
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < 2; i += 1) {
     await asyncCall();
     console.log(i);
   }

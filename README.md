@@ -257,4 +257,3 @@ yarn add tslib
 - [typescript](https://www.typescriptlang.org/)
 - [tsconfig](https://www.staging-typescript.org/zh/tsconfig)
 - [caniuse](http://caniuse.com/)
-- [ECMAScript 6 入门](https://es6.ruanyifeng.com/)
