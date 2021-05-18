@@ -1,7 +1,6 @@
-/// <reference types="node" />
-const { exec } = require("child_process");
-const path = require("path");
-const glob = require("glob");
+import { exec } from 'child_process';
+import path from 'path';
+import glob from 'glob';
 
 const esVersion = [
   "es2016",

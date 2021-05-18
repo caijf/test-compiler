@@ -1,7 +1,7 @@
 {
   "name": "test-compiler",
   "version": "1.0.0",
-  "description": "",
+  "description": "测试babel、tsc 将es新特性编译成 es5 和 cjs",
   "main": "index.js",
   "scripts": {
     "build": "npm run build:es-babel && npm run build:es-tsc && npm run build:cjs-babel && npm run build:cjs-tsc",
@@ -9,7 +9,7 @@
     "build:es-tsc": "rm -rf es-tsc && tsc -t ES5 -m ESNext --outDir ./es-tsc",
     "build:cjs-babel": "rm -rf cjs-babel && cross-env MODULE_TYPE=cjs babel src -d cjs-babel --extensions \".ts\"",
     "build:cjs-tsc": "rm -rf cjs-tsc && tsc -t ES5 -m commonjs --outDir ./cjs-tsc",
-    "test": "jest",
+    "test": "jest --verbose",
     "commit": "cz"
   },
   "husky": {
