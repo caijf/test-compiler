@@ -208,6 +208,50 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 数字分隔符\_(下划线)，提高数字的可读性。
 
+## ES2022
+
+### [Class Fields](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
+
+> [Private instance methods and accessors](https://github.com/tc39/proposal-private-methods/blob/main/OLD_README.md), [Class Public Instance Fields & Private Instance Fields](https://github.com/tc39/proposal-class-fields), [Static class fields and private static methods](https://github.com/tc39/proposal-static-class-features/blob/main/OLD_README.md), [Classes [ES6]](https://exploringjs.com/impatient-js/ch_classes.html)
+
+新的 class 成员：
+
+- 实例公有属性
+- 实例私有属性
+- 静态公有属性
+- 静态私有属性
+- 静态和非静态私有方法和访问器
+
+### [Class Static Block](https://github.com/tc39/proposal-class-static-block)
+
+class 静态初始化代码块。
+
+### [Ergonomic brand checks for Private Fields](https://github.com/tc39/proposal-private-fields-in-in)
+
+in 操作符检查 class 私有属性。
+
+### [RegExp Match Indices](https://github.com/tc39/proposal-regexp-match-indices)
+
+> babel 暂无 plugin 转换。(20220712)
+
+正则表达式匹配索引。
+
+### [Top-level await](https://github.com/tc39/proposal-top-level-await)
+
+顶层 await 。
+
+### [at](https://github.com/tc39/proposal-relative-indexing-method)
+
+可索引值方法。(Array, String, TypedArray)
+
+### [Object.hasOwn](https://github.com/tc39/proposal-accessible-object-hasownproperty)
+
+对象自身属性中是否具有指定的属性（非继承）。
+
+### [Error Cause](https://github.com/tc39/proposal-error-cause)
+
+错误原因。
+
 ## 常见问题
 
 ### tsc 转译文件没有 tslib ？
@@ -216,7 +260,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 安装依赖
 
-```
+```bash
 yarn add tslib
 ```
 

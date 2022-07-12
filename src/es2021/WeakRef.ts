@@ -41,10 +41,10 @@ class Counter {
   }
 }
 
-const counter = new Counter(document.getElementById("counter"));
-counter.start();
-setTimeout(() => {
-  document.getElementById("counter")?.remove();
-}, 5000);
+// const counter = new Counter(document.getElementById("counter"));
+// counter.start();
+// setTimeout(() => {
+//   document.getElementById("counter")?.remove();
+// }, 5000);
 
 export { }

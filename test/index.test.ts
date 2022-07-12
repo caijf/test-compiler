@@ -8,11 +8,12 @@ const esVersion = [
   "es2018",
   "es2019",
   "es2020",
-  "es2021"
+  "es2021",
+  "es2022"
 ];
 
-const babelOutput = path.join(__dirname, "..", "cjs-babel");
-const tscOutput = path.join(__dirname, "..", "cjs-tsc");
+const babelOutput = path.join(__dirname, "..", "dist/cjs-babel");
+const tscOutput = path.join(__dirname, "..", "dist/cjs-tsc");
 
 const babelFiles = {}
 const tscFiles = {}
@@ -31,6 +32,10 @@ describe("babel compile result", () => {
       const { name } = path.parse(fileItem);
       test(`${esv}-${name}`, (done) => {
         exec(`node "${fileItem}"`, (err, stdout, stderr) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
           done();
         });
       });
@@ -44,6 +49,10 @@ describe("tsc compile result", () => {
       const { name } = path.parse(fileItem);
       test(`${esv}-${name}`, (done) => {
         exec(`node "${fileItem}"`, (err, stdout, stderr) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
           done();
         });
       });

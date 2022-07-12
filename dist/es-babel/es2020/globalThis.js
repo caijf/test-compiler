@@ -1,9 +1,11 @@
 // if (globalThis === self) { // worker.js
 //   console.log("globalThis === self");
 // } else 
-if (globalThis === global) { // node.js
+if (globalThis === global) {
+  // node.js
   console.log("globalThis === global");
-} else if (globalThis === window) { // browser.js
+} else if (globalThis === window) {
+  // browser.js
   console.log("globalThis === window");
 }
 
@@ -12,4 +14,4 @@ if (typeof globalThis.setTimeout !== 'function') {
   console.log("has setTimeout method");
 }
 
-export { }
+export {};
