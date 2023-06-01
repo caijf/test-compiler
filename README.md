@@ -212,7 +212,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 ### [Class Fields](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
 
-> [Private instance methods and accessors](https://github.com/tc39/proposal-private-methods/blob/main/OLD_README.md), [Class Public Instance Fields & Private Instance Fields](https://github.com/tc39/proposal-class-fields), [Static class fields and private static methods](https://github.com/tc39/proposal-static-class-features/blob/main/OLD_README.md), [Classes [ES6]](https://exploringjs.com/impatient-js/ch_classes.html)
+> [Private instance methods and accessors](https://github.com/tc39/proposal-private-methods/blob/main/OLD_README.md), [Class Public Instance Fields & Private Instance Fields](https://github.com/tc39/proposal-class-fields), [Static class fields and private static methods](https://github.com/tc39/proposal-static-class-features/blob/main/OLD_README.md), [Classes \[ES6\]](https://exploringjs.com/impatient-js/ch_classes.html)
 
 新的 class 成员：
 
@@ -266,7 +266,7 @@ yarn add tslib
 
 同时启用 `importHelpers` 和 `downlevelIteration` ，`moduleResolution` 设置为 `node` 。如：
 
-```json
+```javascript
 // other config
 "importHelpers": true,
 "downlevelIteration": true,
