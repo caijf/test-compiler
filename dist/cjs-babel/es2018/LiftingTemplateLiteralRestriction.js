@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 // @ts-nocheck
 
 /* eslint-disable */
@@ -12,7 +11,10 @@ function latex(str) {
     "cooked": str[0],
     "raw": str.raw[0]
   };
-} // latex`\unicode`
+}
+
+// latex`\unicode`
 // { cooked: undefined, raw: "\unicode" }
+
 // let bad = `bad escape sequence: \unicode`;
 // 报错 Uncaught SyntaxError: Invalid Unicode escape sequence

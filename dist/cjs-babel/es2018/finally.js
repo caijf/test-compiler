@@ -23,7 +23,9 @@ prom.then(function () {
   console.log('catch');
 })["finally"](function () {
   console.log('finally outer');
-}); // expected output: 
+});
+
+// expected output: 
 // resolve before
 // resolve after
 // finally inner

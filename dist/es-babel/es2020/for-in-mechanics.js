@@ -3,8 +3,10 @@ var object1 = {
   property2: 13
 };
 var array1 = [];
-console.log(Reflect.ownKeys(object1)); // expected output: Array ["property1", "property2"]
+console.log(Reflect.ownKeys(object1));
+// expected output: Array ["property1", "property2"]
 
-console.log(Reflect.ownKeys(array1)); // expected output: Array ["length"]
+console.log(Reflect.ownKeys(array1));
+// expected output: Array ["length"]
 
 export {};

@@ -3,9 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 var _adventurer$dog, _adventurer$someNonEx, _customer$city;
-
 var adventurer = {
   name: 'Alice',
   cat: {
@@ -13,9 +11,11 @@ var adventurer = {
   }
 };
 var dogName = (_adventurer$dog = adventurer.dog) === null || _adventurer$dog === void 0 ? void 0 : _adventurer$dog.name;
-console.log(dogName); // expected output: undefined
+console.log(dogName);
+// expected output: undefined
 
-console.log((_adventurer$someNonEx = adventurer.someNonExistentMethod) === null || _adventurer$someNonEx === void 0 ? void 0 : _adventurer$someNonEx.call(adventurer)); // expected output: undefined
+console.log((_adventurer$someNonEx = adventurer.someNonExistentMethod) === null || _adventurer$someNonEx === void 0 ? void 0 : _adventurer$someNonEx.call(adventurer));
+// expected output: undefined
 
 var potentiallyNullObj = null;
 var x = 0;

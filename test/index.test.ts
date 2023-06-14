@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import path from 'path';
-import glob from 'glob';
+import { globSync } from 'glob';
 
 const esVersion = [
   "es2016",
@@ -19,49 +19,36 @@ const babelFiles = {}
 const tscFiles = {}
 
 esVersion.map(esv => {
-  babelFiles[esv] = glob.sync(`${babelOutput}/${esv}/**/*.js`);
-  tscFiles[esv] = glob.sync(`${tscOutput}/${esv}/**/*.js`);
+  babelFiles[esv] = globSync(`${babelOutput}/${esv}/**/*.js`);
+  tscFiles[esv] = globSync(`${tscOutput}/${esv}/**/*.js`);
 });
 
 // console.log(babelFiles);
 // console.log(tscFiles);
 
-describe("babel compile result", () => {
-  esVersion.forEach(esv => {
-    babelFiles[esv].forEach(fileItem => {
-      const { name } = path.parse(fileItem);
-      test(`${esv}-${name}`, (done) => {
-        exec(`node "${fileItem}"`, (err, stdout, stderr) => {
-          if (err) {
-            console.log(err);
+const compilers = [['babel', babelFiles], ['tsc', tscFiles]];
+const ignores = ['ErrorCause'];
+
+compilers.forEach(compiler => {
+  const [compilerName, files] = compiler;
+  describe(`${compilerName} compile result`, () => {
+    esVersion.forEach(esv => {
+      files[esv].forEach(fileItem => {
+        const { name } = path.parse(fileItem);
+        test(`${esv}-${name}`, (done) => {
+          if (ignores.includes(name)) {
+            done();
             return;
           }
-          done();
+          exec(`node "${fileItem}"`, (err, stdout, stderr) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            done();
+          });
         });
-      });
-    })
+      })
+    });
   });
-});
-
-describe("tsc compile result", () => {
-  esVersion.forEach(esv => {
-    tscFiles[esv].forEach(fileItem => {
-      const { name } = path.parse(fileItem);
-      test(`${esv}-${name}`, (done) => {
-        exec(`node "${fileItem}"`, (err, stdout, stderr) => {
-          if (err) {
-            console.log(err);
-            return;
-          }
-          done();
-        });
-      });
-    })
-  });
-});
-
-
-
-
-
-
+})

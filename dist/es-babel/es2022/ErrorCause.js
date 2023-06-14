@@ -6,5 +6,4 @@ try {
     cause: otherError
   });
 }
-
 export {};

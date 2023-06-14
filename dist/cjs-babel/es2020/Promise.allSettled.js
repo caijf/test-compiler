@@ -12,6 +12,8 @@ Promise.allSettled(promises).then(function (results) {
   return results.forEach(function (result) {
     return console.log(result.status);
   });
-}); // expected output:
+});
+
+// expected output:
 // "fulfilled"
 // "rejected"
