@@ -23,8 +23,8 @@ console.log(Object.entries('foo')); // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
 var obj5 = { a: 5, b: 7, c: 9 };
 try {
     for (var _b = tslib_1.__values(Object.entries(obj5)), _c = _b.next(); !_c.done; _c = _b.next()) {
-        var _d = tslib_1.__read(_c.value, 2), key = _d[0], value = _d[1];
-        console.log("".concat(key, " ").concat(value)); // "a 5", "b 7", "c 9"
+        var _d = tslib_1.__read(_c.value, 2), key_1 = _d[0], value = _d[1];
+        console.log("".concat(key_1, " ").concat(value)); // "a 5", "b 7", "c 9"
     }
 }
 catch (e_1_1) { e_1 = { error: e_1_1 }; }

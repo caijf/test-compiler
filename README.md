@@ -252,6 +252,60 @@ in 操作符检查 class 私有属性。
 
 错误原因。
 
+## ES2023
+
+### [Array find from last](https://github.com/tc39/proposal-array-find-from-last)
+
+`findLast()` 方法反向迭代数组，并返回满足提供的测试函数的第一个元素的值。如果没有找到对应元素，则返回 `undefined`。
+
+`findLastIndex()` 方法反向迭代数组，并返回满足所提供的测试函数的第一个元素的索引。若没有找到对应元素，则返回 -1。
+
+### [Hashbang Grammar](https://github.com/tc39/proposal-hashbang)
+
+> [Shebang](https://zh.wikipedia.org/wiki/Shebang)
+
+`Hashbang`，也称为 `shebang`，是可执行脚本开头的字符序列，用于定义要运行的程序的解释器。当 Unix 内核的程序加载器执行 JavaScript 程序时，主机会剥离 hashbang 以生成有效源，然后再将其传递给引擎。Hashbang Grammar 提案标准化了它的完成方式。
+
+```javascript
+#!/usr/bin/env node
+
+console.log('hi 👋');
+```
+
+### [Symbols as WeakMap keys](https://github.com/tc39/proposal-symbols-as-weakmap-keys)
+
+扩展了 WeakMap API 以允许使用 Symbol 作为键。 目前，WeakMaps 被限制为只允许对象作为键。
+
+### [Change Array by Copy](https://github.com/tc39/proposal-change-array-by-copy)
+
+在 `Array.prototype` 和 `TypedArray.prototype` 上提供额外的方法，通过返回数组的新副本和更改来启用数组的更改。
+
+- [`toReversed()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed) 是 [`reverse()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) 方法对应的复制版本。它返回一个元素顺序相反的新数组。
+- [`toSorted(compareFn)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted) 是 [`sort()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 方法的复制方法版本。它返回一个新数组，其元素按升序排列。
+- [`toSpliced(start, deleteCount, ...items)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) 是 [`splice()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) 方法的复制版本。它返回一个新数组，并在给定的索引处删除和/或替换了一些元素。
+- [`with(index, value)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/with) 是使用方括号表示法修改指定索引值的复制方法版本。它会返回一个新数组，其指定索引处的值会被新值替换。
+
+### [Well-Formed Unicode Strings](https://github.com/tc39/proposal-is-usv-string)
+
+> [UTF-16 字符、Unicode 码位和字素簇（grapheme clusters）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_%E5%AD%97%E7%AC%A6%E3%80%81unicode_%E7%A0%81%E4%BD%8D%E5%92%8C%E5%AD%97%E7%B4%A0%E7%B0%87%EF%BC%88grapheme_clusters%EF%BC%89)
+
+格式正确的 Unicode 字符串。
+
+- [isWellFormed](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/isWellFormed) 返回一个表示该字符串是否包含单独的代理项的布尔值。如果字符串不包含单独的代理项，返回 `true`，否则返回 `false`。
+- [toWellFormed](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toWellFormed) 返回一个新字符串，原字符串中所有单独的代理项在新字符串中会被替换为 Unicode 替换字符 `U+FFFD`。
+
+### [Atomics.waitAsync](https://github.com/tc39/proposal-atomics-wait-async)
+
+- [Atomics.waitAsync()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync) 在共享内存位置异步等待并返回一个 `Promise`。
+
+### [RegExp v flag with set notation + properties of strings](https://github.com/tc39/proposal-regexp-v-flag)
+
+> #TODO 添加示例
+
+RegExp `v` 带有集合符号的标志 + 字符串的属性。
+
+差异（在 A 但不是在 B）、交集（在 A 和 B 中）、嵌套字符类
+
 ## 常见问题
 
 ### tsc 转译文件没有 tslib ？
