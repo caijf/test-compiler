@@ -4,11 +4,12 @@
   "description": "测试babel、tsc 将es新特性编译成 es5 和 cjs",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && npm run build:es-tsc && npm run build:es-babel && npm run build:cjs-tsc && npm run build:cjs-babel",
+    "build": "rm -rf dist && npm run build:es-tsc && npm run build:es-babel && npm run build:cjs-tsc && npm run build:cjs-babel && npm run build:types",
     "build:es-babel": "cross-env MODULE_TYPE=es babel src -d ./dist/es-babel --extensions \".ts\" --ignore ./src/es2022/RegExpMatchIndices.ts",
-    "build:es-tsc": "tsc -t ES5 -m ESNext --outDir ./dist/es-tsc",
+    "build:es-tsc": "tsc -p tsconfig.build.json -t ES5 -m ESNext --outDir ./dist/es-tsc",
     "build:cjs-babel": "cross-env MODULE_TYPE=cjs babel src -d ./dist/cjs-babel --extensions \".ts\" --ignore ./src/es2022/RegExpMatchIndices.ts",
-    "build:cjs-tsc": "tsc -t ES5 -m commonjs --outDir ./dist/cjs-tsc",
+    "build:cjs-tsc": "tsc -p tsconfig.build.json -t ES5 -m commonjs --outDir ./dist/cjs-tsc",
+    "build:types": "rm -rf types && tsc -p tsconfig.build.json --outDir types -d --emitDeclarationOnly",
     "test": "jest --verbose",
     "commit": "cz",
     "prepare": "husky install",
@@ -21,6 +22,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [],
   "author": "",

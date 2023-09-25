@@ -16,6 +16,7 @@ coverage
 build
 zip
 dist
+types
 
 # misc
 .DS_Store
