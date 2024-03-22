@@ -25,23 +25,23 @@ function isWellFormed(str: string) {
 
 const strings = [
   // 单独的高位代理
-  "ab\uD800",
-  "ab\uD800c",
+  'ab\uD800',
+  'ab\uD800c',
 
   // 单独的低位代理
-  "\uDFFFab",
-  "c\uDFFFab",
+  '\uDFFFab',
+  'c\uDFFFab',
 
   // 格式正确
-  "abc",
-  "ab\uD83D\uDE04c"
+  'abc',
+  'ab\uD83D\uDE04c'
 ];
 
 for (const str of strings) {
   // 自定义实现
   isWellFormed(str);
 
-  // 原生自带方法 
+  // 原生自带方法
   // Node.js 20.0.0 开始支持
   // @ts-ignore
   // str.isWellFormed();
@@ -54,7 +54,7 @@ for (const str of strings) {
 // true
 
 for (const str of strings) {
-  // 原生自带方法 
+  // 原生自带方法
   // Node.js 20.0.0 开始支持
   // @ts-ignore
   // str.toWellFormed();
@@ -65,3 +65,5 @@ for (const str of strings) {
 // c�ab
 // abc
 // ab😄c
+
+export {};

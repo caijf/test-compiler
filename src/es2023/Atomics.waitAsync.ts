@@ -5,3 +5,5 @@ const result = Atomics.waitAsync(int32, 0, 0, 1000);
 // { async: true, value: Promise { <pending> } }
 
 Atomics.notify(int32, 0);
+
+export {};

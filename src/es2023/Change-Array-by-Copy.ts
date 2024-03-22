@@ -12,3 +12,5 @@ const correctionNeeded = [1, 1, 3];
 // @ts-ignore
 correctionNeeded.with(1, 2); // [1, 2, 3]
 correctionNeeded; // [1, 1, 3]
+
+export {};

@@ -6,3 +6,5 @@ const someObject = {};
 
 // @ts-ignore
 weak.set(key, someObject);
+
+export {};
