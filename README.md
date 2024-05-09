@@ -285,6 +285,8 @@ console.log('hi 👋');
 - [`toSpliced(start, deleteCount, ...items)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) 是 [`splice()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) 方法的复制版本。它返回一个新数组，并在给定的索引处删除和/或替换了一些元素。
 - [`with(index, value)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/with) 是使用方括号表示法修改指定索引值的复制方法版本。它会返回一个新数组，其指定索引处的值会被新值替换。
 
+## ES2024
+
 ### [Well-Formed Unicode Strings](https://github.com/tc39/proposal-is-usv-string)
 
 > [UTF-16 字符、Unicode 码位和字素簇（grapheme clusters）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_%E5%AD%97%E7%AC%A6%E3%80%81unicode_%E7%A0%81%E4%BD%8D%E5%92%8C%E5%AD%97%E7%B4%A0%E7%B0%87%EF%BC%88grapheme_clusters%EF%BC%89)
@@ -300,11 +302,69 @@ console.log('hi 👋');
 
 ### [RegExp v flag with set notation + properties of strings](https://github.com/tc39/proposal-regexp-v-flag)
 
-> #TODO 添加示例
+RegExp 带有 `v` 符号的标志 + 字符串的属性。
 
-RegExp `v` 带有集合符号的标志 + 字符串的属性。
+支持差异（在 A 但不是在 B）、交集（在 A 和 B 中）、嵌套字符类。
 
-差异（在 A 但不是在 B）、交集（在 A 和 B 中）、嵌套字符类
+```typescript
+// 查找非 ASCII 数字以将其转换为 ASCII 数字的代码：
+const reg1 = /[\p{Decimal_Number}--[0-9]]/v;
+```
+
+### [Resizable and growable ArrayBuffers](https://github.com/tc39/proposal-resizablearraybuffer)
+
+扩展了 `ArrayBuffer` 构造函数，以采用额外的最大长度，从而允许缓冲区的就地增长和收缩。
+
+ArrayBuffer:
+
+- [`resize(newByteLength)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resize)
+- [`byteLength`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/byteLength)
+- [`maxByteLength`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/maxByteLength)
+- [`resizable`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resizable)
+
+SharedArrayBuffer:
+
+- [`grow(newByteLength)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/grow)
+- [`byteLength`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/byteLength)
+- [`growable`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/growable)
+- [`maxByteLength`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/maxByteLength)
+
+### [Array Grouping](https://github.com/tc39/proposal-array-grouping)
+
+使数组（和迭代）中的项目分组更容易。
+
+- [`Object.groupBy`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy)
+- [`Map.groupBy`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy)
+
+### [Promise.withResolvers](https://github.com/tc39/proposal-promise-with-resolvers)
+
+返回一个对象，其包含一个新的 `Promise` 对象和两个函数，用于解决或拒绝它，对应于传入给 `Promise()` 构造函数执行器的两个参数。
+
+```typescript
+const { promise, resolve, reject } = Promise.withResolvers();
+```
+
+完全等同于以下代码：
+
+```typescript
+let resolve, reject;
+const promise = new Promise((res, rej) => {
+  resolve = res;
+  reject = rej;
+});
+```
+
+只是它更简洁，并且不需要使用 `let`。
+
+### [ArrayBuffer transfer](https://github.com/tc39/proposal-arraybuffer-transfer)
+
+从可调整大小的缓冲区提案中分离出来的。
+
+创建一个内容与该缓冲区相同的新 ArrayBuffer 实例，然后将当前缓冲区分离。
+
+- [`transfer(newByteLength)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer#newbytelength)
+- [`transferToFixedLength(newByteLength)`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transferToFixedLength)
+- [`detached`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/detached)
 
 ## 常见问题
 

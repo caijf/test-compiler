@@ -3,7 +3,17 @@ import path from 'path';
 // @ts-ignore
 import { globSync } from 'glob';
 
-const esVersion = ['es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'es2023'];
+const esVersion = [
+  'es2016',
+  'es2017',
+  'es2018',
+  'es2019',
+  'es2020',
+  'es2021',
+  'es2022',
+  'es2023',
+  'es2024'
+];
 
 const babelOutput = path.join(__dirname, '..', 'dist/cjs-babel');
 const tscOutput = path.join(__dirname, '..', 'dist/cjs-tsc');
