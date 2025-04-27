@@ -7,9 +7,7 @@ view[1] = 2;
 view[2] = 4;
 
 // 将缓冲区复制到另一个相同大小的缓冲区
-// @ts-expect-error
 const buffer2 = buffer.transfer();
-// @ts-expect-error
 console.log(buffer.detached); // true
 console.log(buffer2.byteLength); // 8
 const view2 = new Uint8Array(buffer2);
@@ -35,14 +33,12 @@ console.log(view4[7]); // 0
 // buffer.transfer(); // TypeError: Cannot perform ArrayBuffer.prototype.transfer on a detached ArrayBuffer
 
 // 示例：传输一个可调整大小的 ArrayBuffer
-// @ts-expect-error
 const buffer5 = new ArrayBuffer(8, { maxByteLength: 16 });
 const view5 = new Uint8Array(buffer5);
 view5[1] = 2;
 view5[7] = 4;
 
 // 将缓冲区复制到一个更小的缓冲区
-// @ts-expect-error
 const buffer6 = buffer5.transfer(4);
 console.log(buffer6.byteLength); // 4
 console.log(buffer6.maxByteLength); // 16

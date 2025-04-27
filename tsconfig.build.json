@@ -1,4 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/es2024/RegExp-v-flag-with-set-notation-properties-of-strings.ts"]
 }

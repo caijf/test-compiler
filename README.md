@@ -1,8 +1,115 @@
 # test-compiler
 
-> 推荐使用 [typescript Playground](https://www.typescriptlang.org/zh/play)、[babel repl](https://babeljs.io/repl)
+> 推荐使用 [typescript Playground](https://www.typescriptlang.org/zh/play)、[babel repl](https://babeljs.io/repl) 。
+>
+> 自 es2025 开始， tsconfig.json `target` 由 es5 改为 es2018 。
+>
+> 本地运行测试，需安装最新的 nodejs 。
 
-测试 babel、tsc 将 es 新特性编译成 es5 和 cjs
+测试 babel、tsc 将 es 新特性编译成 es5 和 cjs 。
+
+## ES2025
+
+### [RegExp.escape](https://github.com/tc39/proposal-regex-escaping)
+
+[RegExp.escape()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape) 静态方法对字符串中任何潜在的正则表达式语法字符进行转义 ，并返回一个可以安全地用作 RegExp() 构造函数的文本模式的新字符串。
+
+### [Float16 on TypedArrays, DataView, `Math.f16round`](https://github.com/tc39/proposal-float16array)
+
+向 JavaScript 添加 float16（又名半精度或 binary16）TypedArrays 。
+
+- [Float16Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float16Array)
+- [DataView.prototype.getFloat16()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat16)
+- [DataView.prototype.setFloat16()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat16)
+- [Math.f16round()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/f16round)
+
+### [`Promise.try`](https://github.com/tc39/proposal-promise-try)
+
+[`Promise.try()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) 静态方法接受一个任意类型的回调函数（无论其是同步或异步，返回结果或抛出异常），并将其结果封装成一个 Promise。
+
+### [Sync Iterator helpers](https://github.com/tc39/proposal-iterator-helpers)
+
+迭代器辅助函数。
+
+- [drop()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/drop)
+- [every()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/every)
+- [filter()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/filter)
+- [find()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/find)
+- [flatMap()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap)
+- [forEach()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/forEach)
+- [map()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/map)
+- [reduce()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/reduce)
+- [some()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/some)
+- [take()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/take)
+- [toArray()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/toArray)
+- [Iterator.from()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from)
+
+### [JSON Modules](https://github.com/tc39/proposal-json-modules)
+
+以 [import attributes 提案](https://github.com/tc39/proposal-import-attributes)为基础，增加了跨 JavaScript 环境以通用方式导入 JSON 模块的功能。
+
+```typescript
+import json from './foo.json' with { type: 'json' };
+import('foo.json', { with: { type: 'json' } });
+```
+
+### [Import Attributes](https://github.com/tc39/proposal-import-attributes)
+
+为模块 import 语句添加了内联语法，以将更多信息与模块说明符一起传递。此类属性的初始应用是跨 JavaScript 环境以通用方式支持其他类型的模块，从 [JSON 模块](http://github.com/tc39/proposal-json-modules)开始。
+
+```typescript
+// import statements
+import json from './foo.json' with { type: 'json' };
+
+// re-export statements
+export { val } from './foo.js' with { type: 'javascript' };
+
+// dynamic import()
+import('foo.json', { with: { type: 'json' } });
+```
+
+### [RegExp Modifiers](https://github.com/tc39/proposal-regexp-modifiers)
+
+修饰符允许您更改子表达式中当前活动的 RegExp 标志。
+
+```typescript
+const re1 = /^[a-z](?-i:[a-z])$/i;
+re1.test('ab'); // true
+re1.test('Ab'); // true
+re1.test('aB'); // false
+
+const re2 = /^(?i:[a-z])[a-z]$/;
+re2.test('ab'); // true
+re2.test('Ab'); // true
+re2.test('aB'); // false
+```
+
+### [New Set methods](https://github.com/tc39/proposal-set-methods)
+
+内置 `Set` 类添加下列方法：
+
+- [Set.prototype.intersection()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection)
+- [Set.prototype.union()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/union)
+- [Set.prototype.difference()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference)
+- [Set.prototype.symmetricDifference()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference)
+- [Set.prototype.isSubsetOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf)
+- [Set.prototype.isSupersetOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf)
+- [Set.prototype.isDisjointFrom()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom)
+
+### [Duplicate named capture groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups)
+
+重复的命名捕获组。
+
+```typescript
+// 一个可能引用多个不同组的反向引用
+const reg = /(?:(?<a>x)|(?<a>y))\k<a>/;
+reg.test('xx'); // true
+reg.test('yy'); // true
+reg.test('xy'); // false
+reg.test('yx'); // false
+reg.test('xyx'); // false
+reg.test('yxy'); // false
+```
 
 ## ES2024
 

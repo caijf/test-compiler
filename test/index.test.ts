@@ -12,7 +12,8 @@ const esVersion = [
   'es2021',
   'es2022',
   'es2023',
-  'es2024'
+  'es2024',
+  'es2025'
 ];
 
 const babelOutput = path.join(__dirname, '..', 'dist/cjs-babel');
