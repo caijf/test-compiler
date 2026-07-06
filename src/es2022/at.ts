@@ -19,3 +19,5 @@ index = -2;
 
 console.log(`Using an index of ${index} the item returned is ${int8.at(index)}`);
 // expected output: "Using an index of -2 the item returned is 40"
+
+export {};

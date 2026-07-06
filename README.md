@@ -1,5 +1,7 @@
 # test-compiler
 
+> 数据源自[TC39 提案](https://github.com/tc39/proposals)。
+>
 > 推荐使用 [typescript Playground](https://www.typescriptlang.org/zh/play)、[babel repl](https://babeljs.io/repl) 。
 >
 > 自 es2025 开始， tsconfig.json `target` 由 es5 改为 es2018 。
@@ -8,13 +10,66 @@
 
 测试 babel、tsc 将 es 新特性编译成 es5 和 cjs 。
 
+## ES2026
+
+### [Upsert](https://github.com/tc39/proposal-upsert)
+
+- Map 实例的 [getOrInsert()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsert) 方法返回此 Map 中与指定键对应的值。如果该键不存在，它会插入一个具有该键和给定默认值的新条目，并返回插入的值。如果计算默认值成本很高，可以考虑改用 [Map.prototype.getOrInsertComputed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsertComputed)，它接受一个回调函数，仅在真正需要时才计算默认值。
+- Map 实例的 [getOrInsertComputed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsertComputed) 方法返回此 Map 中与指定键对应的值。如果该键不存在，它会插入一个新条目，该条目具有指定的键和根据给定回调计算出的默认值，并返回插入的值。
+- WeakMap 实例的 [getOrInsert()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsert) 方法返回此 WeakMap 中与指定键对应的值。如果该键不存在，它会插入一个具有该键和给定默认值的新条目，并返回插入的值。如果计算默认值成本很高，可以考虑改用 [WeakMap.prototype.getOrInsertComputed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsertComputed)，它接受一个回调函数，仅在真正需要时才计算默认值。
+- WeakMap 实例的 [getOrInsertComputed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsertComputed) 方法返回此 WeakMap 中与指定键对应的值。如果该键不存在，它会插入一个新条目，该条目具有指定的键和根据给定回调计算出的默认值，并返回插入的值。
+
+### [JSON.parse source text access](https://github.com/tc39/proposal-json-parse-with-source)
+
+更新 `JSON.parse`，为 `reviver` 函数提供更多参数，主要传达从中派生的源文本（包括标点符号，但不包括前导/尾随的无关空格）。
+
+### [Iterator Sequencing](https://github.com/tc39/proposal-iterator-sequencing)
+
+对现有迭代器进行排序来创建迭代器。
+
+- [Iterator.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/concat) 静态方法会根据一个可迭代对象列表创建一个新的 Iterator 对象。新的迭代器会按顺序返回每个输入可迭代对象的值。
+- Iterator 实例的 [flatMap()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap) 方法返回一个新的迭代器辅助对象，该对象接受原始迭代器中的每个元素，通过映射函数运行它，并生成映射函数返回的元素（这些元素包含在另一个迭代器或可迭代对象中）。
+
+### [Uint8Array to/from Base64](https://github.com/tc39/proposal-arraybuffer-base64)
+
+在十六进制字符串和 Uint8Array 之间进行转换的方法。
+
+静态方法
+
+- [Uint8Array.fromBase64()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromBase64) 从 base64 编码的字符串创建一个新的 Uint8Array 对象。
+- [Uint8Array.fromHex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromHex) 可以根据十六进制字符串创建一个新的 Uint8Array 对象。
+
+实例方法
+
+- [toBase64()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toBase64) 方法返回基于此 Uint8Array 对象中的数据的 base64 编码字符串。
+- [toHex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toHex) 方法返回基于此 Uint8Array 对象中的数据的十六进制编码字符串。
+
+### [Math.sumPrecise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sumPrecise)
+
+Math.sumPrecise() 静态方法接受一个可迭代的数字对象，并返回这些数字的总和。它比在循环中求和更精确，因为它避免了中间结果中浮点精度的损失。
+
+### [Error.isError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/isError)
+
+Error.isError() 静态方法确定传递的值是否为 [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) 。
+
+它比 [instanceof Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) 更稳健，因为它避免了误报和漏报：
+
+- `Error.isError()` 会拒绝不是实际 Error 实例的值，即使它们的原型链中有 `Error.prototype` —— `instanceof Error` 会接受这些值，因为它会检查原型链。
+- `Error.isError()` 接受在另一个领域构造的 Error 对象 `instanceof Error` 对这些对象返回 `false` 因为 `Error` 构造函数的标识在不同领域中不同。
+
+对于 [DOMException](https://developer.mozilla.org/en-US/docs/Web/API/DOMException) 实例， `Error.isError()` 返回 `true` 。这是因为，尽管 `DOMException` 并未被指定为 `Error` 的真正子类（ `Error` 构造函数并非 `DOMException` 构造函数的原型），但出于所有品牌特征检查的目的， `DOMException` 行为仍然与 `Error` 相同。
+
+### [Array.fromAsync](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync)
+
+[Array.fromAsync()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync) 静态方法可以由一个[异步可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#%E5%BC%82%E6%AD%A5%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%BC%82%E6%AD%A5%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%8D%8F%E8%AE%AE)、[可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%8D%8F%E8%AE%AE)或[类数组对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1)创建一个新的、浅拷贝的 Array 实例。
+
 ## ES2025
 
 ### [RegExp.escape](https://github.com/tc39/proposal-regex-escaping)
 
-[RegExp.escape()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape) 静态方法对字符串中任何潜在的正则表达式语法字符进行转义 ，并返回一个可以安全地用作 RegExp() 构造函数的文本模式的新字符串。
+[RegExp.escape()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape) 静态方法对字符串中任何潜在的正则表达式语法字符进行转义，并返回一个可以安全地用作 RegExp() 构造函数的文本模式的新字符串。
 
-### [Float16 on TypedArrays, DataView, `Math.f16round`](https://github.com/tc39/proposal-float16array)
+### [Float16 on TypedArrays, DataView,](https://github.com/tc39/proposal-float16array) [`Math.f16round`](https://github.com/tc39/proposal-float16array)
 
 向 JavaScript 添加 float16（又名半精度或 binary16）TypedArrays 。
 
@@ -309,7 +364,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 可选链操作符( ?. )允许读取位于连接对象链深处的属性的值，而不必明确验证链中的每个引用是否有效。?. 操作符的功能类似于 . 链式操作符，不同之处在于，在引用为空(nullish ) (null 或者 undefined) 的情况下不会引起错误，该表达式短路返回值是 undefined。与函数调用一起使用时，如果给定的函数不存在，则返回 undefined。
 
-### [`for-in` mechanics](https://github.com/tc39/proposal-for-in-order)
+### [`for-in`](https://github.com/tc39/proposal-for-in-order) [mechanics](https://github.com/tc39/proposal-for-in-order)
 
 以前在不同的引擎下 `for-in` 循环出来的内容顺序是可能不一样的，现在标准化了。
 
@@ -355,7 +410,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 字符串的末端删除连续空白符，返回一个新字符串，并不会修改原字符串本身。
 
-### [Well-formed `JSON.stringify`](https://github.com/tc39/proposal-well-formed-stringify)
+### [Well-formed](https://github.com/tc39/proposal-well-formed-stringify) [`JSON.stringify`](https://github.com/tc39/proposal-well-formed-stringify)
 
 更加友好的 JSON.stringify （修复了对于一些超出范围的 unicode 展示错误的问题。）
 
@@ -393,7 +448,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 ### [RegExp Unicode Property Escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
 
-正则表达式 Unicode 转义。 Unicode 属性转义——形式为 `\p{...}` 和 `\P{...}` ，在正则表达式中使用标记 `u` (unicode) 设置，在 `\p` 块儿内，可以以键值对的方式设置需要匹配的属性而非具体内容。
+正则表达式 Unicode 转义。 Unicode 属性转义——形式为 `\p{...}` 和 `\P{...}`，在正则表达式中使用标记 `u` (unicode) 设置，在 `\p` 块儿内，可以以键值对的方式设置需要匹配的属性而非具体内容。
 
 ### [RegExp Lookbehind Assertions](https://github.com/tc39/proposal-regexp-lookbehind)
 
@@ -407,7 +462,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 正则表达式命名捕获组 (`?<name>`)。
 
-### [`s` (`dotAll`) flag for regular expressions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll)
+### [`s`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll) [(`dotAll`) flag for regular expressions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll)
 
 正则表达式中点 `.` 匹配除回车外的任何单字符，标记 `s` 改变这种行为，允许行终止符的出现。
 
@@ -451,7 +506,7 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 
 用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。
 
-### [`Object.values` / `Object.entries`](https://github.com/tc39/proposal-object-values-entries)
+### [`Object.values`](https://github.com/tc39/proposal-object-values-entries) [/](https://github.com/tc39/proposal-object-values-entries) [`Object.entries`](https://github.com/tc39/proposal-object-values-entries)
 
 - [Object.values()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 
@@ -482,10 +537,10 @@ WeakRef 对象允许您保留对另一个对象的弱引用，而不会阻止被
 安装依赖
 
 ```bash
-yarn add tslib
+pnpm add tslib
 ```
 
-同时启用 `importHelpers` 和 `downlevelIteration` ，`moduleResolution` 设置为 `node` 。如：
+同时启用 `importHelpers` 和 `downlevelIteration`，`moduleResolution` 设置为 `node` 。如：
 
 ```javascript
 // other config
@@ -505,14 +560,14 @@ yarn add tslib
 
 ```bash
 # babel
-yarn add @babel/runtime
+pnpm add @babel/runtime
 ```
 
 或
 
 ```bash
 # tsc
-yarn add tslib
+pnpm add tslib
 ```
 
 ## 参考
